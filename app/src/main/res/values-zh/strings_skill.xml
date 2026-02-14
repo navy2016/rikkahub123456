@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 技能管理页面 -->
+    <string name="skill_management">技能管理</string>
+    <string name="import_skill">导入技能</string>
+    <string name="export_skill">导出技能</string>
+    <string name="delete_skill">删除技能</string>
+    <string name="edit_skill">编辑技能</string>
+    
+    <!-- 空状态 -->
+    <string name="no_skills">暂无技能</string>
+    <string name="no_skills_description">导入技能包来扩展 AI 的能力。技能包可以包含自定义工具、提示词和配置。</string>
+    <string name="import_first_skill">导入第一个技能</string>
+    
+    <!-- 技能信息 -->
+    <string name="skill_name">技能名称</string>
+    <string name="skill_description">技能描述</string>
+    <string name="skill_version">版本</string>
+    <string name="skill_author">作者</string>
+    <string name="skill_tags">标签</string>
+    <string name="skill_tags_hint">多个标签用逗号分隔</string>
+    <string name="tools_count">%d 个工具</string>
+    
+    <!-- 导入相关 -->
+    <string name="import_skill_description">选择一个技能包 ZIP 文件进行导入。技能包必须包含 skill.md 文件。</string>
+    <string name="skill_zip_format">ZIP 包格式</string>
+    <string name="select_zip_file">选择 ZIP 文件</string>
+    <string name="validating">验证中…</string>
+    <string name="importing_skill">正在导入技能…</string>
+    <string name="import_action">导入</string>
+    <string name="skill_import_success">技能 "%s" 导入成功</string>
+    <string name="skill_import_failed">导入失败: %s</string>
+    <string name="valid_skill_zip">有效的技能包</string>
+    <string name="invalid_skill_zip">无效的技能包：缺少 skill.md 文件</string>
+    
+    <!-- 删除确认 -->
+    <string name="delete_skill_confirm">确定要删除技能 "%s" 吗？此操作无法撤销。</string>
+    
+    <!-- Assistant 技能设置 -->
+    <string name="assistant_skills">技能</string>
+    <string name="assistant_skills_desc">为此助手启用特定技能</string>
+    <string name="add_skill">添加技能</string>
+    <string name="remove_skill">移除技能</string>
+    <string name="no_skills_available">没有可用的技能。请先导入技能包。</string>
+    <string name="enable_skill">启用技能</string>
+    <string name="disable_skill">禁用技能</string>
+    
+    <!-- 技能详情 -->
+    <string name="skill_details">技能详情</string>
+    <string name="skill_tools">工具列表</string>
+    <string name="skill_prompts">提示词</string>
+    <string name="skill_injections">提示词注入</string>
+    <string name="skill_no_tools">此技能没有定义工具</string>
+    <string name="skill_system_prompt">系统提示词</string>
+    <string name="skill_user_prompt_template">用户提示词模板</string>
+    
+    <!-- 工具详情 -->
+    <string name="tool_name">工具名称</string>
+    <string name="tool_description">工具描述</string>
+    <string name="tool_parameters">参数</string>
+    <string name="tool_executor">执行器</string>
+    <string name="builtin_executor">内置</string>
+    <string name="javascript_executor">JavaScript</string>
+    <string name="python_executor">Python</string>
+    <string name="http_executor">HTTP 请求</string>
+</resources>
