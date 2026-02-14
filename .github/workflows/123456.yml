@@ -2,6 +2,12 @@ name: Release Build
 
 on:
   workflow_dispatch:
+    inputs:
+      package_name:
+        description: 'Package Name (default: me.rerere.rikkahub.dev.abc)'
+        required: false
+        default: 'me.rerere.rikkahub.dev.abc'
+        type: string
   push:
     tags:
       - "v*"
@@ -12,7 +18,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        include:
+          - package_name: ${{ github.event.inputs.package_name || 'me.rerere.rikkahub.dev.abc' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,7 +42,6 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          # 确保 pip 安装完成
           pip --version
 
       - name: Gradle cache
@@ -56,6 +64,14 @@ jobs:
 
           # 写入Google Services配置
           echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
+
+      - name: Modify Package Name
+        run: |
+          # 修改包名为 me.rerere.rikkahub.dev.abc
+          sed -i 's/applicationId = "me.rerere.rikkahub.dev"/applicationId = "me.rerere.rikkahub.dev.abc"/g' app/build.gradle.kts
+          
+          # 确认修改成功
+          grep "applicationId" app/build.gradle.kts
 
       - name: Gradle Build
         run: |
